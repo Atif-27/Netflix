@@ -9,7 +9,7 @@ import {
 import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
-import { USER_AVATAR } from "../utils/contants";
+import { BACKGROUND, USER_AVATAR } from "../utils/contants";
 
 const Login = () => {
   const [showSignIn, setShowSignIn] = useState(true);
@@ -73,10 +73,7 @@ const Login = () => {
   }
   return (
     <div>
-      <img
-        src="https://assets.nflxext.com/ffe/siteui/vlv3/77d35039-751f-4c3e-9c8d-1240c1ca6188/cf244808-d722-428f-80a9-052acdf158ec/IN-en-20231106-popsignuptwoweeks-perspective_alpha_website_large.jpg"
-        alt="bg"
-      />
+      <img src={BACKGROUND} alt="bg" />
       <form
         onSubmit={submitHandler}
         className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 bg-black bg-opacity-80 rounded-lg  text-white w-[500px] p-10 py-16 space-y-7 "

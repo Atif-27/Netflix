@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 import Header from "../component/Header";
 import MainContainer from "../component/MainContainer";
 import SecondaryContainer from "../component/SecondaryContainer";
@@ -9,6 +10,7 @@ import {
   addUpcomingMovies,
   addTopRatedMovies,
 } from "../utils/movieSlice";
+import GptSearch from "../component/GptSearch";
 
 const Browse = () => {
   useFetchMovies(
@@ -27,11 +29,19 @@ const Browse = () => {
     "https://api.themoviedb.org/3/movie/top_rated?page=1",
     addTopRatedMovies
   );
+  const gptSearch = useSelector((store) => store.gpt.showGptSearch);
   return (
     <div className=" ">
       <Header />
-      <MainContainer />
-      <SecondaryContainer />
+      {gptSearch ? (
+        <GptSearch />
+      ) : (
+        <>
+          {" "}
+          <MainContainer />
+          <SecondaryContainer />
+        </>
+      )}
     </div>
   );
 };
