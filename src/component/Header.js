@@ -41,12 +41,12 @@ const Header = () => {
     dispatch(changeLanguage(e.target.value));
   }
   return (
-    <div className=" px-20 py-3 bg-gradient-to-b from-black w-full  flex justify-between items-center z-10 absolute">
-      <img className="w-48 " src={LOGO} alt="logo" />
+    <div className="bg-gradient-to-b from-black  md:px-10 md:py-3 pb-4 absolute w-full flex flex-col md:flex-row  justify-between items-center z-10 text-xs sm:text-sm md:text-md ">
+      <img className="w-40 sm:w-42 md:w-46  lg:w-48" src={LOGO} alt="logo" />
       {userData && (
-        <div className="pr-8 flex space-x-4">
+        <div className="flex space-x-4  px-4">
           <select
-            className="bg-gray-900 text-white px-3 rounded-lg"
+            className="bg-gray-900 text-white px-1 md:px-3 rounded-lg"
             onChange={handleLanguageChange}
           >
             {SUPPORTED_LANGUAGE.map((lang) => (
@@ -56,12 +56,12 @@ const Header = () => {
             ))}
           </select>
           <button
-            className="p-3 px-4 text-white  bg-purple-600 rounded-xl"
+            className="p-1 md:p-3 px-3 md:px-4 text-white  bg-purple-600 rounded-xl"
             onClick={handleGptSearchClick}
           >
             {showGptSearch ? "HomePage" : "AI Suggestions"}
           </button>
-          <img className="w-12 " src={userData.photoURL} alt="pfp" />
+          <img className="w-10 md:w-12" src={userData.photoURL} alt="pfp" />
           <button className="text-white" onClick={handleSignOut}>
             (Sign Out)
           </button>

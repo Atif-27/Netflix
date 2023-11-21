@@ -7,7 +7,7 @@ const GptMovieSuggestion = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     return () => {
-      dispatch(deleteGptMovies());
+      // dispatch(deleteGptMovies());
     };
   }, []);
   const gpt = useSelector((store) => store.gpt);
@@ -17,7 +17,7 @@ const GptMovieSuggestion = () => {
   return (
     <div>
       {gptMovies ? (
-        <div className="p-12 m-4 bg-opacity-80  bg-black text-white z-10">
+        <div className="p-4 md:p-12 my-4 md:m-4 bg-opacity-80  bg-black text-white z-10">
           {gptMovies.map((movies, index) => (
             <MovieList
               key={movieNames[index]}

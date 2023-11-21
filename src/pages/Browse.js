@@ -37,6 +37,7 @@ const Browse = () => {
   return (
     <div className=" ">
       <Header />
+
       {gptSearch ? (
         <GptSearch />
       ) : (
