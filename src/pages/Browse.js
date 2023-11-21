@@ -15,19 +15,23 @@ import GptSearch from "../component/GptSearch";
 const Browse = () => {
   useFetchMovies(
     "https://api.themoviedb.org/3/movie/now_playing?page=1",
-    addNowPlayingMovies
+    addNowPlayingMovies,
+    "nowPlayingMovies"
   );
   useFetchMovies(
     "https://api.themoviedb.org/3/movie/popular?page=1",
-    addPopularMovies
+    addPopularMovies,
+    "popularMovies"
   );
   useFetchMovies(
     "https://api.themoviedb.org/3/movie/upcoming?page=1",
-    addUpcomingMovies
+    addUpcomingMovies,
+    "upcomingMovies"
   );
   useFetchMovies(
     "https://api.themoviedb.org/3/movie/top_rated?page=1",
-    addTopRatedMovies
+    addTopRatedMovies,
+    "topRatedMovies"
   );
   const gptSearch = useSelector((store) => store.gpt.showGptSearch);
   return (

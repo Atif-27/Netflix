@@ -59,7 +59,7 @@ const Header = () => {
             className="p-3 px-4 text-white  bg-purple-600 rounded-xl"
             onClick={handleGptSearchClick}
           >
-            {showGptSearch ? "HomePage" : "GPT Search"}
+            {showGptSearch ? "HomePage" : "AI Suggestions"}
           </button>
           <img className="w-12 " src={userData.photoURL} alt="pfp" />
           <button className="text-white" onClick={handleSignOut}>

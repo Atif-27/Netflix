@@ -6,7 +6,7 @@ import { BACKGROUND } from "../utils/contants";
 const GptSearch = () => {
   return (
     <div className="overflow-x-hidden">
-      <div className="absolute -z-10">
+      <div className="fixed -z-10">
         <img src={BACKGROUND} alt="bg" />
       </div>
       <GptSearchBar />

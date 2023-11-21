@@ -1,9 +1,10 @@
 import { useEffect } from "react";
 import { TMDB_OPTION } from "../utils/contants";
 import { addCurrentVideo } from "../utils/movieSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 export default function useFetchVideo(API_LINK) {
   const dispatch = useDispatch();
+  const trailerIsPresent = useSelector((store) => store.movies.currentVideo);
 
   useEffect(() => {
     async function fetchVideo() {
@@ -15,6 +16,6 @@ export default function useFetchVideo(API_LINK) {
       const trailer = videoList.length ? videoList[0] : data.results[0];
       dispatch(addCurrentVideo(trailer));
     }
-    fetchVideo();
+    !trailerIsPresent && fetchVideo();
   }, []);
 }
